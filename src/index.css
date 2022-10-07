@@ -11,3 +11,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+@media screen and (min-width :762px) {
+  .container-fluid{
+  padding-right: calc(var(--bs-gutter-x) * 15) !important;
+    padding-left: calc(var(--bs-gutter-x) * 15) !important;
+}
+}
