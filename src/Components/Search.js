@@ -11,26 +11,21 @@ export const Search = (props) => {
      const [forecast, setForecast] = useState("");
      const [city, setCity] = useState("");
      const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=d7f2302909be07e4e4066c32537729f5`;
-     const apiForecast =`http://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=d7f2302909be07e4e4066c32537729f5`;
      const id = data.weather?data.weather[0].icon:null
      const iconInfo =`http://openweathermap.org/img/wn/${id}@2x.png`
      
      
+
      const onChange = (e) => {
           setSearch(e.target.value);
      };
      const handleSubmit = (e) => {
           e.preventDefault();
           loadApi();
-          loadForecast()
-          
+          props.pull(search)
      };
-     const loadForecast = () => {
-        axios.get(apiForecast).then((response) => {
-             setForecast(response.data);
-             console.log(response.data);
-        });
-   };
+
+     
 
      const loadApi = () => {
           axios.get(apiUrl).then((response) => {
@@ -80,15 +75,7 @@ export const Search = (props) => {
                </nav>
                <div className="container" style={{marginLeft:'0px', paddingLeft:'0px'}}>
               <div className="row g-0">
-                 <Card
-                         city={data.name}
-                         temp={data.main ? data.main.temp.toFixed() : null}
-                         weather={data.weather ? data.weather[0].main: null}
-                         humidity={data.main ? data.main.humidity: null}
-                         feels={data.main ? data.main.feels_like.toFixed(): null}
-                         wind={data.wind ? data.wind.speed : null}
-                         pressure={data.main ? data.main.pressure: null}
-                    />
+               
                     </div>
                     <div className="row g-0">
                        
