@@ -1,4 +1,7 @@
 body {
+  background-image: url(https://images.pexels.com/photos/681391/pexels-photo-681391.jpeg?cs=srgb&dl=pexels-aleksejs-bergmanis-681391.jpg&fm=jpg);
+  background-size:cover;
+  background-repeat: no-repeat;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -6,10 +9,41 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-.img{
-  height: 80vh;
-  background-size: cover;  
+.navbar-brand > h1 {
+  font-size: 40px;
+  font-weight: 900;
 }
+.info{ 
+  display: flex;
+  width: 85vh;
+}
+.temp{
+  font-size: 35px;
+}
+ p{
+  margin:0px !important;
+}
+.info > h6 { 
+  font-size: 14px;
+  font-weight: 900;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.info > h3 { font-weight: 900;
+  margin-left: 3vh;
+  margin-right: 5vh;
+  flex-direction: column;
+}
+.col-md-4 > img{
+  width: 12vh;
+  background-size:cover;
+  background-repeat: no-repeat;
+}
+.card{
+  margin: 2vh;
+}
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
@@ -17,7 +51,23 @@ code {
 }
 @media screen and (min-width :925px) {
   .container-fluid{
-  padding-right: calc(var(--bs-gutter-x) * 15) !important;
-    padding-left: calc(var(--bs-gutter-x) * 15) !important;
+  padding-right: calc(var(--bs-gutter-x) * 5) !important;
+    /* padding-left: calc(var(--bs-gutter-x) * 5) !important; */
+}
+.navbar{
+  flex-wrap: nowrap !important;
+}
+.navbar-brand > h1 {
+  font-size: 55px;
+  font-weight: 900;
+}
+.navbar-brand > h1 >img {
+  width: 12vh;
+}
+.temp{
+  font-size: 45px;
+}
+.info > h6{
+  font-size: 16px;
 }
 }
