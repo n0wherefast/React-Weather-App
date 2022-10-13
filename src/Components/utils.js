@@ -4,7 +4,7 @@ export function InputField(props) {
   return (
     <input
     className="form-control  me-2"
-    value={props.value}
+    value=  {props.value}
     onChange={props.onChange}
     type="search"
     placeholder="Search Cities.."

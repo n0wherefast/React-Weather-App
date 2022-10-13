@@ -2,7 +2,6 @@ import { Search } from "./Components/Search";
 // import { Bg } from "./Components/Bg";
 import { Card } from "./Components/Card";
 import { useState,useEffect } from "react";
-import Geolocation from "./Components/Geolocation";
 import axios from "axios";
 
 function App() {
@@ -11,20 +10,19 @@ function App() {
   const [forecast, setForecast] = useState("");
 
  const pull_data = (data) => { // request data from child to parent
-    setCityData(data) 
-    
+    setCityData(data)  
   }
   const apiForecast =`http://api.openweathermap.org/data/2.5/forecast?q=${cityData}&appid=d7f2302909be07e4e4066c32537729f5`;
 
-const loadForecast = () => {
-  axios.get(apiForecast).then((response) => {
-       setForecast(response.data);
-       console.log(response.data);
-  });
-};
+// const loadForecast = () => {
+//   axios.get(apiForecast).then((response) => {
+//        setForecast(response.data);
+//        console.log(response.data);
+//   });
+// };
 
 useEffect(() => {
-  loadForecast()
+  // loadForecast()
 }, [cityData]);
  
   return (
@@ -32,6 +30,7 @@ useEffect(() => {
       
  <Search 
  pull={pull_data} />  
+
 
 
  <Card

@@ -1,14 +1,12 @@
 import icon from "../img/116.png";
 import React, { useState, useEffect } from "react";
-import axios from "axios";
-import { Card } from "./Card";
-import { InputField,Button } from "./utils";
 
+import { InputField,Button } from "./utils";
+import { Demo } from "./Geolocation";
 
 export const Search = (props) => {
      const [search, setSearch] = useState("");
      const [data, setData] = useState("");
-     const [forecast, setForecast] = useState("");
      const [city, setCity] = useState("");
      const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=d7f2302909be07e4e4066c32537729f5`;
      const id = data.weather?data.weather[0].icon:null
@@ -25,17 +23,21 @@ export const Search = (props) => {
           props.pull(search)
      };
 
-     
-
-     const loadApi = () => {
-          axios.get(apiUrl).then((response) => {
-               setData(response.data);
-               console.log(response.data);
-          });
+     async function loadApi  ()  {
+       
+        try {
+            let response = await fetch(apiUrl,{mode:"cors"})
+            let i = await response.json()
+            setData(i)
+            
+        } catch (error) {
+            
+        }
      };
-
+   // spostare  setCity  dentro handleSubmit
      useEffect(() => {
-          setCity(search);
+        setCity(search)  
+          
      }, [handleSubmit]);
 
      return (
@@ -51,6 +53,7 @@ export const Search = (props) => {
                          <form className="input-group" role="search">
                               <InputField
                                   value={search}
+                                 
                                   onChange={onChange}/>
                               <Button
                                 click={handleSubmit}/>
@@ -69,7 +72,7 @@ export const Search = (props) => {
                          <p>Wind:{data.wind ? data.wind.speed : null} %</p>
                          <p>Pressure: {data.main ? data.main.pressure: null} HPa</p>
                     </h6>  
-                    <div><img src={iconInfo} alt="" /></div>                              
+                    <div><img src={city? iconInfo: null} alt="" /></div>                              
                    
             </div>
                </nav>
@@ -84,6 +87,7 @@ export const Search = (props) => {
                    
                 
                </div>
+                
           </>
      );
 };

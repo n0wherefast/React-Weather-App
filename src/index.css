@@ -43,6 +43,9 @@ body {
 .card{
   margin: 2vh;
 }
+tr{
+  color: azure;
+}
 
 
 code {
