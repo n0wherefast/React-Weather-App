@@ -1,6 +1,5 @@
 import icon from "../img/116.png";
 import React, { useState, useEffect } from "react";
-
 import { InputField,Button } from "./utils";
 import { Geolocation } from "./Geolocation";
 
@@ -9,13 +8,14 @@ export const Search = (props) => {
      const [search, setSearch] = useState("");
      const [data, setData] = useState("");
      const [city, setCity] = useState("");
-     const [geoData, setGeoData] = useState("")
+     const [pulledGeoDAta, setPulledGeoData] = useState("");
      const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=d7f2302909be07e4e4066c32537729f5`;
-     const id = data.weather?data.weather[0].icon:null
-     const iconInfo =`http://openweathermap.org/img/wn/${id}@2x.png`
+     const id = data.weather?data.weather[0].icon:null;
+     const iconInfo =`http://openweathermap.org/img/wn/${id}@2x.png`;
      
      const pullGeoData = data =>{
-          console.log(data)
+          // console.log(data)
+          // setPulledGeoData(data)
      };
        
 

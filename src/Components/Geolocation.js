@@ -3,11 +3,12 @@ import { useState,useEffect } from 'react';
 
 export  const Geolocation = (props) => {
 
-  const [geoData,setGeoData] = useState()
+  const [geoData,setGeoData] = useState("");
   
 
       
        const fetchData = async () => {
+        
         navigator.geolocation.getCurrentPosition(async function (position) {
             let lat = position.coords.latitude;
             let lon = position.coords.longitude;
