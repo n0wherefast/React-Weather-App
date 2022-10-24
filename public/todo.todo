@@ -2,3 +2,5 @@
 // far funzionare geolocation all interno di search
 // ultime modiche css
 // pulire codice
+`http://api.openweathermap.org/data/2.5/forecast?q=${cityData}&units=metric&appid=d7f2302909be07e4e4066c32537729f5`;
+http://api.openweathermap.org/data/2.5/forecast/daily?q=london&cnt=7&appid=d7f2302909be07e4e4066c32537729f5

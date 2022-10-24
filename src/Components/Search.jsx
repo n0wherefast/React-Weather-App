@@ -2,6 +2,8 @@ import icon from "../img/116.png";
 import React, { useState, useEffect } from "react";
 import { InputField,Button } from "./utils";
 import { Geolocation } from "./Geolocation";
+import TimeAndLoacation from "./TimeAndLoacation";
+
 
 export const Search = (props) => {
 
@@ -87,7 +89,9 @@ export const Search = (props) => {
                     <div><img src={city? iconInfo: null} alt="" /></div>                              
                    
             </div>
+            
                </nav>
+               <TimeAndLoacation  />
                <div className="container" style={{marginLeft:'0px', paddingLeft:'0px'}}>
               <div className="row g-0">
                

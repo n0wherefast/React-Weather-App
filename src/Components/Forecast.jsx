@@ -29,8 +29,8 @@ const loadForecast = async () => {
 useEffect(() => {
     loadForecast()
   }, []);
-  console.log('setForecast',forecast)
-  console.log(forecast ? forecast.list[0].main: null)
+  console.log()
+  
 
   return (
     <>

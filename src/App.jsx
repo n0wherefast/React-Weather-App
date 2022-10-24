@@ -3,12 +3,18 @@ import { Search } from "./Components/Search";
 // import  Card from "./Components/Card";
 import Forecast from "./Components/Forecast";
 import { useState,useEffect } from "react";
+import TimeAndLoacation from "./Components/TimeAndLoacation";
+import getFormatWeatherData from "./services/weatherService";
 
 
 function App() {
   const [data, setData] = useState("");  
  
-
+  const fetchWether = async () =>{
+     const data = await getFormatWeatherData( { q: "london"});
+     console.log(data)
+  }
+  fetchWether()
 
  const pull_data = (data) => { // request data from child to parent
     setData(data) 
@@ -25,8 +31,9 @@ function App() {
   return (
     <div className="App">
       
+      
  <Search 
- pull={pull_data} />  
+ pull={pull_data}/>  
 
 {data?<Forecast
 cityName={data}/>:null }

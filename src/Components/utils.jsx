@@ -7,7 +7,7 @@ export function InputField(props) {
     value=  {props.value}
     onChange={props.onChange}
     type="search"
-    placeholder="Search Cities.."
+    placeholder="Search For Cities..."
     aria-label="Search"
 />
   )
