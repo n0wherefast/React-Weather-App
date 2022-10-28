@@ -1,24 +1,35 @@
 import icon from "../img/116.png";
 import React, { useState, useEffect } from "react";
-import { InputField,Button } from "./utils";
+import { InputField,Button,GeoButton } from "./utils";
 import { Geolocation } from "./Geolocation";
 import TimeAndLoacation from "./TimeAndLoacation";
+import {getFormatWeatherData,formatToLocalTime} from "../services/weatherService";
+import Card from "./Card";
+
 
 
 export const Search = (props) => {
 
-     const [search, setSearch] = useState("");
-     const [data, setData] = useState("");
-     const [city, setCity] = useState("");
-     const [pulledGeoDAta, setPulledGeoData] = useState("");
-     const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=d7f2302909be07e4e4066c32537729f5`;
-     const id = data.weather?data.weather[0].icon:null;
+                                           
+     const [search, setSearch] = useState("");                                           // from comes the  input 
+     const [city, setCity] = useState({q:'london'});                                         // here is stored  info  from Search Input 
+     const [weather, setWeather] = useState(null);                                               //  where is stored the data from api
+     const [units,setUnitus] = useState("metric");                                         
+     const [lat, setLat] = useState("");
+     const [lon, setLon] = useState("");
+     const id = weather?.icon;
      const iconInfo =`http://openweathermap.org/img/wn/${id}@2x.png`;
      
-     const pullGeoData = data =>{
-          // console.log(data)
-          // setPulledGeoData(data)
+     const pullGeoData = (lat,lon) =>{
+          setLat(lat)
+          setLon(lon)
      };
+
+     const handleGeoClick =(e)=>{
+          e.preventDefault();
+          setCity({lat,lon})
+         
+     }
        
 
      const onChange = (e) => {
@@ -28,27 +39,23 @@ export const Search = (props) => {
 
      const handleSubmit = (e) => {
           e.preventDefault();
-          loadApi();
-          props.pull(search)
-     };
-
- async function loadApi  ()  {
-       
-        try {
-            let response = await fetch(apiUrl,{mode:"cors"})
-            let i = await response.json()
-            setData(i)
-            
-        } catch (error) {
-            
-  }
-     };
-   
-     useEffect(() => {
+          setCity({q: search})   
           
-           setCity(search)     
+      };
 
-     }, [handleSubmit]);
+     useEffect(() => {
+
+          const fetchWeather = async () =>{
+           await getFormatWeatherData({...city, units}).then((data)=>{
+                    setWeather(data); 
+                    props.pull(data, data.daily, data.hourly)
+               })         
+            }
+            fetchWeather()        
+            
+     }, [city, units]);
+
+   
 
      return (
           <>
@@ -67,32 +74,33 @@ export const Search = (props) => {
                                   onChange={onChange}/>
                               <Button
                                 click={handleSubmit}/>
+                                <GeoButton click={handleGeoClick}/>
                          </form>
                             
                     </div>
                     <Geolocation 
                     pullGeoData={pullGeoData}
                     />
-                    
-               <div className="info" style={{color:'white',}}>
-                    <h3>
-                      <p>{data.name}</p>
-                      <p className="temp">{data.main ? data.main.temp.toFixed() : null} °C</p>
-                      <p>{data.weather ? data.weather[0].main: null} </p>                                                                     
-                    </h3>
-                     <h6> 
-                        <p>Humidity:{data.main ? data.main.humidity: null} %</p>
-                         <p>Feels Like:{data.main ? data.main.feels_like.toFixed(): null} °C</p>
-                         <p>Wind:{data.wind ? data.wind.speed : null} %</p>
-                         <p>Pressure: {data.main ? data.main.pressure: null} HPa</p>
-                    </h6>  
-                    <div><img src={city? iconInfo: null} alt="" /></div>                              
-                   
-            </div>
+                  {weather &&  
+                  <Card
+                  name={weather.name}
+                  temp={weather.temp}
+                  weather={weather.details}
+                  humidity={weather.humidity}
+                  feelsLike={weather.feels_like}
+                  wind={weather.speed}
+                  pressure={weather.pressure}
+                  icon={iconInfo}                  
+               />}
             
                </nav>
-               <TimeAndLoacation  />
+               
+                {weather &&
+               <TimeAndLoacation 
+               weather={formatToLocalTime(weather.dt,weather.timezone)} />} 
+
                <div className="container" style={{marginLeft:'0px', paddingLeft:'0px'}}>
+                    
               <div className="row g-0">
                
                     </div>

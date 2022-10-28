@@ -9,15 +9,14 @@ const getWeatherData = (infoApiType, searchParams) => {
      url.search = new URLSearchParams({ ...searchParams, appid: API_KEY });
 
      return fetch(url)
-     .then((res) => res.json())
-     
-     
+     .then((res) => res.json())  
 };
+
 
 const formatCurrentWeather = (data) =>{
       const{
         coord:{lat,lon},
-        main:{temp, feels_like, temp_min, temp_max, humidity},
+        main:{temp, feels_like, temp_min, temp_max,pressure, humidity},
         name,
         dt,
         sys:{country,sunrise,sunset},
@@ -26,7 +25,7 @@ const formatCurrentWeather = (data) =>{
       } = data
       const{main:details,icon} = weather[0]
 
-      return{lat,lon,temp,feels_like,temp_min,temp_max,humidity,
+      return{lat,lon,temp,feels_like,temp_min,temp_max,pressure,humidity,
     name,dt,country,sunrise,sunset,details,icon,speed}
 };
 
@@ -43,7 +42,7 @@ const formatForecastWeather = (data) => {
     hourly = hourly.slice(1,6).map(d => {
         return{
             title: formatToLocalTime(d.dt, timezone, 'hh:mm a'),
-            temp: d.temp.day,
+            temp: d.temp,
             icon: d.weather[0].icon
         }
     });
@@ -60,7 +59,7 @@ const getFormatWeatherData = async (searchParams) =>{
         lat,
         lon,
         exclude: "current,minutely,alerts,",
-        unit: searchParams.units,
+        units: searchParams.units,
     }).then(formatForecastWeather)
 
 
@@ -70,7 +69,7 @@ const getFormatWeatherData = async (searchParams) =>{
 const formatToLocalTime = (
     secs,
     zone,
-    format ="cccc,dd LLL yyyy |localtime:'hh:mm a"
+    format ="cccc,dd LLL yyyy' | Local time:'hh:mm a"
     ) => DateTime.fromSeconds(secs).setZone(zone).toFormat(format);
 
-export default  getFormatWeatherData
+export   {getFormatWeatherData ,formatToLocalTime}

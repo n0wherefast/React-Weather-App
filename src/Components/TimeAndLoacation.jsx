@@ -1,8 +1,8 @@
 import React from 'react'
 
-function TimeAndLoacation() {
+function TimeAndLoacation(props) {
   return (
-    <div className=" bg-dark" style={{ opacity: "0.9" ,color:'white',fontWeight:'lighter'}} >TimeAndLoacation</div>
+    <div className=" bg-dark" style={{display:'flex',alignItems:'center',justifyContent:'center',  opacity: "0.9" ,color:'white',fontWeight:'lighter'}} >{props.weather}</div>
   )
 }
 
