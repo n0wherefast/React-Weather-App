@@ -99,18 +99,7 @@ export const Search = (props) => {
                <TimeAndLoacation 
                weather={formatToLocalTime(weather.dt,weather.timezone)} />} 
 
-               <div className="container" style={{marginLeft:'0px', paddingLeft:'0px'}}>
-                    
-              <div className="row g-0">
-               
-                    </div>
-                    <div className="row g-0">
-                       
-                        
-                    </div>
-                   
-                
-               </div>
+
                 
           </>
      );

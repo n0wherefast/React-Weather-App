@@ -17,17 +17,21 @@ function App() {
     setHourly(hourly)
   }
 
- console.log( weather.temp)
+ 
 
  const changeBackground =()=>{
-  weather.temp > 16 ?  console.log('ok') : console.log('no');
+ 
+if(weather.temp >= 30 ){
+  return "linear-gradient(to right, #3c1e00, #ff4000"
+}else { return "linear-gradient(to right, #0575E6, #021B79)"}
+  
  } 
 
 
 
 
   return (
-    <div className={`App ${changeBackground()}`}>
+    <div className="App " style={{background:`${changeBackground()}`}}>
         
  <Search 
  pull={pull_data}/>  
