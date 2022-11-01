@@ -1,9 +1,7 @@
 import { Search } from "./Components/Search";
-// import { Bg } from "./Components/Bg";
-// import  Card from "./Components/Card";
 import Forecast from "./Components/Forecast";
-import { useState,useEffect } from "react";
-import Card from "./Components/Card";
+import { useState } from "react";
+
 
 function App() {
   const [weather, setWeather] = useState(""); 
@@ -20,28 +18,28 @@ function App() {
  
 
  const changeBackground =()=>{
- 
-if(weather.temp >= 30 ){
-  return "linear-gradient(to right, #3c1e00, #ff4000"
-}else { return "linear-gradient(to right, #0575E6, #021B79)"}
-  
+      if(weather.temp >= 30 ){
+        return "linear-gradient(to right, #3c1e00, #ff4000"                       // change background based on temperature
+      }else { return "linear-gradient(to right, #0575E6, #021B79)"}
  } 
 
 
 
 
   return (
-    <div className="App " style={{background:`${changeBackground()}`}}>
+    <div className="App " style={{}}>
         
  <Search 
  pull={pull_data}/>  
 
- <div className="container" style={{ display:'flex',flexDirection:'column'}}>
+ <div className="container" style={{ background:`${changeBackground()}`}}>
 
 
-       <div  style={{display:'flex',flexDirection:'row',marginTop:'1em',borderTop:'1px solid white'}} >
-         <h1>Hourly</h1>
-                    {hourly &&
+       <div style={{display:'flex',flexDirection:'column',marginTop:'3em'}} >
+         <h1 style={{borderBottom:'1px solid white',paddingBottom:'1em',color:'white'}}>Hourly</h1>
+         <div style={{display:'flex',flexDirection:'row' ,flexWrap: "wrap",justifyContent:'center'}}>
+              
+              {hourly &&
                         hourly.map((item,index)=>(
                         <Forecast
                         key={index}
@@ -49,12 +47,16 @@ if(weather.temp >= 30 ){
                         temp={item.temp}
                         icon={`http://openweathermap.org/img/wn/${item.icon}@2x.png`}
                         />
-                        )) }  
+                        )) } </div>
+                     
         </div>
 
-      <div  style={{display:'flex',flexDirection:'row',marginTop:'1em',borderTop:'1px solid white'}} >
-         <h1>Daily</h1>
-                    {daily &&
+      <div style={{display:'flex',flexDirection:'column',marginTop:'3em'}} >
+
+         <h1 style={{borderBottom:'1px solid white',paddingBottom:'1em',color:'white'}}>Daily</h1>
+
+         <div style={{display:'flex',flexDirection:'row',flexWrap: "wrap",justifyContent:'center'}}>
+          {daily &&
                         daily.map((item,index)=>(
                         <Forecast
                         key={index}
@@ -62,7 +64,9 @@ if(weather.temp >= 30 ){
                         temp={item.temp}
                         icon={`http://openweathermap.org/img/wn/${item.icon}@2x.png`}
                         />
-                        )) }  
+                        )) } 
+         </div>
+                     
         </div>
 
 

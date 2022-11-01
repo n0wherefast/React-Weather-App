@@ -9,27 +9,26 @@ body {
 }
 
 .App{
-  background: #a8c0ff;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #0575E6, #021B79);  
-  background: linear-gradient(to right, #0575E6, #021B79); 
+  background: #313a52;  
 }
 .navbar-brand > h1 {
-  font-size: 40px;
+  font-size: 30px;
   font-weight: 900;
 }
 
 .info{ 
   display: flex;
-  width: 85vh;
+  width: 85vh;margin-top: 1em;
+ 
 }
 .temp{
-  font-size: 35px;
+  font-size: 30px;
 }
  p{
   margin:0px !important;
 }
 .info > h5 { 
-  font-size: 20px;
+  font-size: 15px;
   font-weight: 900;
   display: flex;
   flex-direction: column;
@@ -57,7 +56,16 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.p-info{
+    font-size: 20px;
+  }
+.forecast{
+  width: 8em !important;
+}
 @media screen and (min-width :925px) {
+
+  
   .container-fluid{
   padding-right: calc(var(--bs-gutter-x) * 5) !important;
     /* padding-left: calc(var(--bs-gutter-x) * 5) !important; */
@@ -75,7 +83,26 @@ code {
 .temp{
   font-size: 45px;
 }
-.info > h6{
-  font-size: 16px;
+.p-info{
+  font-size: 35px;
 }
+.info > h5{
+  font-size: 20px;
+}
+.container{
+  display:flex;
+  flex-direction:column;
+  margin-top:2em;
+  border: 1px solid white;
+  width:100vh !important;
+  height: 90vh;
+  background: #a8c0ff;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #0575E6, #021B79);  
+  background: linear-gradient(to right, #0575E6, #021B79); 
+}
+.forecast{
+  width: 10em ;
+}
+
+
 }
