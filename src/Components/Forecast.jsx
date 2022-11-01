@@ -20,7 +20,7 @@ export default function Forecast(props) {
 
   return (
     <>
-        <div className='forecast' style={{ fontSize:'15px',border:'1px solid white',margin:'1em',padding:'1em'}}>
+        <div className='forecast'>
           <p>{props.title}</p>
           <p>{props.temp.toFixed()} °C</p>
           <img src={props.icon} alt="" />

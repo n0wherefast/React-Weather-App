@@ -32,12 +32,12 @@ function App() {
  <Search 
  pull={pull_data}/>  
 
- <div className="container" style={{ background:`${changeBackground()}`}}>
+ <div className="container" style={{ }}>
 
 
-       <div style={{display:'flex',flexDirection:'column',marginTop:'3em'}} >
-         <h1 style={{borderBottom:'1px solid white',paddingBottom:'1em',color:'white'}}>Hourly</h1>
-         <div style={{display:'flex',flexDirection:'row' ,flexWrap: "wrap",justifyContent:'center'}}>
+       <div className="forecast-container" style={{background:`${changeBackground()}`}} >
+         <h1 >Hourly</h1>
+         <div className="forecast-sec">
               
               {hourly &&
                         hourly.map((item,index)=>(
@@ -51,11 +51,11 @@ function App() {
                      
         </div>
 
-      <div style={{display:'flex',flexDirection:'column',marginTop:'3em'}} >
+      <div className="forecast-container" style={{background:`${changeBackground()}`}} >
 
-         <h1 style={{borderBottom:'1px solid white',paddingBottom:'1em',color:'white'}}>Daily</h1>
+         <h1 >Daily</h1>
 
-         <div style={{display:'flex',flexDirection:'row',flexWrap: "wrap",justifyContent:'center'}}>
+         <div className="forecast-sec">
           {daily &&
                         daily.map((item,index)=>(
                         <Forecast

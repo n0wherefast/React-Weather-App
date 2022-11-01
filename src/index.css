@@ -12,14 +12,18 @@ body {
   background: #313a52;  
 }
 .navbar-brand > h1 {
-  font-size: 30px;
+  font-size: 28px;
   font-weight: 900;
+}
+.container{
+  width: 90% !important;
+  margin-top:2em;
 }
 
 .info{ 
   display: flex;
-  width: 85vh;margin-top: 1em;
- 
+  width:85vh;
+  margin-top: 1em;
 }
 .temp{
   font-size: 30px;
@@ -47,10 +51,6 @@ body {
 .card{
   margin: 2vh;
 }
-tr{
-  color: azure;
-}
-
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
@@ -62,19 +62,59 @@ code {
   }
 .forecast{
   width: 8em !important;
+  font-size:17px;
+  color:white;
+  margin:0.5em;
+  padding:0.5em;
 }
+.forecast-container{
+  display:flex;
+ flex-direction:column;
+ margin-top:3em;
+ border: 1px solid rgb(2, 113, 117);
+}
+.forecast-container > h1{
+    padding-bottom: 1em;
+    color: white;
+    padding-left: 1em;
+    padding-top: 0.5em;
+}
+.forecast-sec{
+  display:flex;
+  flex-direction:row;
+  flex-wrap: wrap;
+  justify-content:center;
+}
+.TaL{
+  border-bottom: 1px solid rgb(2, 113, 117);
+  padding-bottom: 0.5em;
+}
+
+
+
+
+
+
+
+
+
 @media screen and (min-width :925px) {
 
   
   .container-fluid{
   padding-right: calc(var(--bs-gutter-x) * 5) !important;
     /* padding-left: calc(var(--bs-gutter-x) * 5) !important; */
+    --bs-gutter-x: none !important;
 }
 .navbar{
   flex-wrap: nowrap !important;
 }
+.TaL{
+  border-bottom: 1px solid rgb(2, 113, 117);
+  padding-bottom: 0.5em;
+}
 .navbar-brand > h1 {
-  font-size: 55px;
+  font-size: 45px;
   font-weight: 900;
 }
 .navbar-brand > h1 >img {
@@ -82,6 +122,9 @@ code {
 }
 .temp{
   font-size: 45px;
+}
+.info{
+  margin-top: 0em;
 }
 .p-info{
   font-size: 35px;
@@ -93,16 +136,21 @@ code {
   display:flex;
   flex-direction:column;
   margin-top:2em;
-  border: 1px solid white;
+
   width:100vh !important;
   height: 90vh;
-  background: #a8c0ff;  /* fallback for old browsers */
+  /* background: #a8c0ff;  /* fallback for old browsers 
   background: -webkit-linear-gradient(to right, #0575E6, #021B79);  
-  background: linear-gradient(to right, #0575E6, #021B79); 
+  background: linear-gradient(to right, #0575E6, #021B79);  */
 }
 .forecast{
   width: 10em ;
 }
+/* .forecast-sec{
+   display:flex;
+  flex-direction:column;
+  margin-top:3em;
+} */
 
 
 }

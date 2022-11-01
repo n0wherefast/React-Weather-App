@@ -2,11 +2,7 @@ import React from 'react'
 
 
 export  const Geolocation = (props) => {
-
-
-
-      
-   
+  
         
         navigator.geolocation.getCurrentPosition( (position) => {
             let lat = position.coords.latitude;
@@ -14,7 +10,7 @@ export  const Geolocation = (props) => {
 
             
             props.pullGeoData(lat,lon)   
-       
+       console.log( lat,lon)
      })
 
     
