@@ -10,7 +10,6 @@ export  const Geolocation = (props) => {
 
             
             props.pullGeoData(lat,lon)   
-       console.log( lat,lon)
      })
 
     

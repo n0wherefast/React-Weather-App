@@ -1,156 +1,135 @@
 body {
-  
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+     margin: 0;
+     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+          "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+          "Helvetica Neue", sans-serif;
+     -webkit-font-smoothing: antialiased;
+     -moz-osx-font-smoothing: grayscale;
 }
 
-.App{
-  background: #313a52;  
+.App {
+     background: #313a52;
 }
 .navbar-brand > h1 {
-  font-size: 28px;
-  font-weight: 900;
+     font-size: 28px;
+     font-weight: 900;
 }
-.container{
-  width: 90% !important;
-  margin-top:2em;
+.container {
+     width: 90% !important;
+     margin-top: 2em;
 }
 
-.info{ 
-  display: flex;
-  width:85vh;
-  margin-top: 1em;
+.info {
+     display: flex;
+     width: 85vh;
+     margin-top: 1em;
 }
-.temp{
-  font-size: 30px;
+.temp {
+     font-size: 30px;
 }
- p{
-  margin:0px !important;
+p {
+     margin: 0px !important;
 }
-.info > h5 { 
-  font-size: 15px;
-  font-weight: 900;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+.info > h5 {
+     font-size: 15px;
+     font-weight: 900;
+     display: flex;
+     flex-direction: column;
+     justify-content: space-around;
 }
-.info > h3 { font-weight: 900;
-  margin-left: 3vh;
-  margin-right: 5vh;
-  flex-direction: column;
+.info > h3 {
+     font-weight: 900;
+     margin-left: 3vh;
+     margin-right: 5vh;
+     flex-direction: column;
 }
-.col-md-4 > img{
-  width: 12vh;
-  background-size:cover;
-  background-repeat: no-repeat;
+.col-md-4 > img {
+     width: 12vh;
+     background-size: cover;
+     background-repeat: no-repeat;
 }
-.card{
-  margin: 2vh;
+.card {
+     margin: 2vh;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+     font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+          monospace;
 }
 
-.p-info{
-    font-size: 20px;
-  }
-.forecast{
-  width: 8em !important;
-  font-size:17px;
-  color:white;
-  margin:0.5em;
-  padding:0.5em;
+.p-info {
+     font-size: 20px;
 }
-.forecast-container{
-  display:flex;
- flex-direction:column;
- margin-top:3em;
- border: 1px solid rgb(2, 113, 117);
+.forecast {
+     width: 8em !important;
+     font-size: 17px;
+     color: white;
+     margin: 0.5em;
+     padding: 0.5em;
 }
-.forecast-container > h1{
-    padding-bottom: 1em;
-    color: white;
-    padding-left: 1em;
-    padding-top: 0.5em;
+.forecast-container {
+     display: flex;
+     flex-direction: column;
+     margin-top: 3em;
+     border: 1px solid rgb(2, 113, 117);
 }
-.forecast-sec{
-  display:flex;
-  flex-direction:row;
-  flex-wrap: wrap;
-  justify-content:center;
+.forecast-container > h1 {
+     padding-bottom: 1em;
+     color: white;
+     padding-left: 1em;
+     padding-top: 0.5em;
 }
-.TaL{
-  border-bottom: 1px solid rgb(2, 113, 117);
-  padding-bottom: 0.5em;
+.forecast-sec {
+     display: flex;
+     flex-direction: row;
+     flex-wrap: wrap;
+     justify-content: center;
+}
+.TaL {
+     border-bottom: 1px solid rgb(2, 113, 117);
+     padding-bottom: 0.5em;
 }
 
-
-
-
-
-
-
-
-
-@media screen and (min-width :925px) {
-
-  
-  .container-fluid{
-  padding-right: calc(var(--bs-gutter-x) * 5) !important;
-    /* padding-left: calc(var(--bs-gutter-x) * 5) !important; */
-    --bs-gutter-x: none !important;
-}
-.navbar{
-  flex-wrap: nowrap !important;
-}
-.TaL{
-  border-bottom: 1px solid rgb(2, 113, 117);
-  padding-bottom: 0.5em;
-}
-.navbar-brand > h1 {
-  font-size: 45px;
-  font-weight: 900;
-}
-.navbar-brand > h1 >img {
-  width: 12vh;
-}
-.temp{
-  font-size: 45px;
-}
-.info{
-  margin-top: 0em;
-}
-.p-info{
-  font-size: 35px;
-}
-.info > h5{
-  font-size: 20px;
-}
-.container{
-  display:flex;
-  flex-direction:column;
-  margin-top:2em;
-
-  width:100vh !important;
-  height: 90vh;
-  /* background: #a8c0ff;  /* fallback for old browsers 
-  background: -webkit-linear-gradient(to right, #0575E6, #021B79);  
-  background: linear-gradient(to right, #0575E6, #021B79);  */
-}
-.forecast{
-  width: 10em ;
-}
-/* .forecast-sec{
-   display:flex;
-  flex-direction:column;
-  margin-top:3em;
-} */
-
-
+@media screen and (min-width: 925px) {
+     .container-fluid {
+          padding-right: calc(var(--bs-gutter-x) * 5) !important;
+          /* padding-left: calc(var(--bs-gutter-x) * 5) !important; */
+          --bs-gutter-x: none !important;
+     }
+     .navbar {
+          flex-wrap: nowrap !important;
+     }
+     .TaL {
+          border-bottom: 1px solid rgb(2, 113, 117);
+          padding-bottom: 0.5em;
+     }
+     .navbar-brand > h1 {
+          font-size: 45px;
+          font-weight: 900;
+     }
+     .navbar-brand > h1 > img {
+          width: 12vh;
+     }
+     .temp {
+          font-size: 45px;
+     }
+     .info {
+          margin-top: 0em;
+     }
+     .p-info {
+          font-size: 35px;
+     }
+     .info > h5 {
+          font-size: 20px;
+     }
+     .container {
+          display: flex;
+          flex-direction: column;
+          margin-top: 2em;
+          width: 100vh !important;
+          height: 90vh;
+     }
+     .forecast {
+          width: 10em;
+     }
 }

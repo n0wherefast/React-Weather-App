@@ -8,13 +8,13 @@ import Card from "./Card";
 
 
 
-export const Search = (props) => {
+export const Search = ({pull}) => {
 
                                            
-     const [search, setSearch] = useState("");                                           // from comes the  input 
+     const [search, setSearch] = useState("");                                                // from comes the  input 
      const [city, setCity] = useState({q:'london'});                                         // here is stored  info  from Search Input 
-     const [weather, setWeather] = useState(null);                                               //  where is stored the data from api
-     const [units,setUnitus] = useState("metric");                                         
+     const [weather, setWeather] = useState(null);                                           //  where is stored the data from api
+     const [units,/*setUnitus*/] = useState("metric");                                         
      const [lat, setLat] = useState("");
      const [lon, setLon] = useState("");
      const id = weather?.icon;
@@ -22,7 +22,7 @@ export const Search = (props) => {
      
      const pullGeoData = (lat,lon) =>{
           setLat(lat)
-          setLon(lon)
+          setLon(lon)                                                                     //pull longitude,latitude data from weatherService module
      };
 
      const handleGeoClick =(e)=>{
@@ -42,13 +42,14 @@ export const Search = (props) => {
           setCity({q: search})   
           
       };
+      
 
      useEffect(() => {
 
           const fetchWeather = async () =>{
            await getFormatWeatherData({...city, units}).then((data)=>{
                     setWeather(data); 
-                    props.pull(data, data.daily, data.hourly)
+                    pull(data, data.daily, data.hourly)
                })         
             }
             fetchWeather()        
