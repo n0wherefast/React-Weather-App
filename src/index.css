@@ -48,6 +48,7 @@ p {
      background-size: cover;
      background-repeat: no-repeat;
 }
+
 .card {
      margin: 2vh;
 }
@@ -64,8 +65,16 @@ code {
      width: 8em !important;
      font-size: 17px;
      color: white;
-     margin: 0.5em;
+     margin-bottom: 0.5em;
+     margin-left: 1em;
      padding: 0.5em;
+    
+}
+.forcast-nameLocation{
+     font-size: 25px;
+     color: azure;
+     padding: 1em;
+
 }
 .forecast-container {
      display: flex;
@@ -84,13 +93,16 @@ code {
      flex-direction: row;
      flex-wrap: wrap;
      justify-content: center;
+     
 }
 .TaL {
      border-bottom: 1px solid rgb(2, 113, 117);
      padding-bottom: 0.5em;
+     font-size: 12px;
 }
 
 @media screen and (min-width: 925px) {
+     .TaL{font-size: 19px ;}
      .container-fluid {
           padding-right: calc(var(--bs-gutter-x) * 5) !important;
           /* padding-left: calc(var(--bs-gutter-x) * 5) !important; */

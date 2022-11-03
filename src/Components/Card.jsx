@@ -7,7 +7,7 @@ function Card (props){
     <div className="info" style={{color:'white',}}>
       <div><img src={props.icon} alt="" /></div>
     <h3>
-          <p className='p-info'>{props.name}</p> 
+          <p className='p-info'>{props.name} ,{props.country}</p> 
           <p className="temp">{props.temp?.toFixed()}°C</p>
           <p>{props.weather} </p>                                                                     
     </h3>

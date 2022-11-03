@@ -24,7 +24,7 @@ function App() {
  } 
 
 
-
+console.log(weather)
 
   return (
     <div className="App " style={{}}>
@@ -36,7 +36,8 @@ function App() {
 
 
        <div className="forecast-container" style={{background:`${changeBackground()}`}} >
-         <h1 >Hourly</h1>
+         <p className="forcast-nameLocation">Hourly | {weather.name},{weather.country}</p>
+         
          <div className="forecast-sec">
               
               {hourly &&
@@ -53,7 +54,7 @@ function App() {
 
       <div className="forecast-container" style={{background:`${changeBackground()}`}} >
 
-         <h1 >Daily</h1>
+      <p className="forcast-nameLocation">Daily | {weather.name},{weather.country}</p>
 
          <div className="forecast-sec">
           {daily &&
@@ -63,6 +64,7 @@ function App() {
                         title={item.title}
                         temp={item.temp}
                         icon={`http://openweathermap.org/img/wn/${item.icon}@2x.png`}
+                        
                         />
                         )) } 
          </div>

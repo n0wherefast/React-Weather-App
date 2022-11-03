@@ -85,6 +85,7 @@ export const Search = ({pull}) => {
                   {weather &&  
                   <Card
                   name={weather.name}
+                  country={weather.country}
                   temp={weather.temp}
                   weather={weather.details}
                   humidity={weather.humidity}
@@ -98,7 +99,10 @@ export const Search = ({pull}) => {
                
                 {weather &&
                <TimeAndLoacation 
-               weather={formatToLocalTime(weather.dt,weather.timezone)} />} 
+               weather={formatToLocalTime(weather.dt,weather.timezone)} 
+               min={weather.temp_min}
+               max={weather.temp_max}
+               />} 
 
 
                 
