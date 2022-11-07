@@ -119,8 +119,7 @@ code {
 .TaL {
      border-bottom: 1px solid rgb(2, 113, 117);
      padding-bottom: 0.5em;
-     font-size: 0.54em;
-     height: 6.6em;
+     font-size: 0.56em;
 }
 
 @media screen and (min-width: 1100px) {
