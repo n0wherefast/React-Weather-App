@@ -32,7 +32,7 @@ function Card (props){
           </p>
          
     </h5>  
-     <div><img src={props.icon} alt=""/></div>
+     <div><img style={{position:'relative',bottom:'15px'}} src={props.icon} alt=""/></div>
     </div>
     
    
