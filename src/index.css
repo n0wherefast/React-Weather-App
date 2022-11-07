@@ -5,10 +5,17 @@ body {
           "Helvetica Neue", sans-serif;
      -webkit-font-smoothing: antialiased;
      -moz-osx-font-smoothing: grayscale;
+     background-color: #313a52 !important;
 }
 
 .App {
      background: #313a52;
+}
+.search{
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    width: 100%;
 }
 .navbar-brand > h1 {
      font-size: 28px;
@@ -17,6 +24,9 @@ body {
 .container {
      width: 90% !important;
      margin-top: 2em;
+     position: relative;
+    top: 18em;
+    height: 100%;
 }
 
 .info {
@@ -79,7 +89,7 @@ code {
 .forecast-container {
      display: flex;
      flex-direction: column;
-     margin-top: 3em;
+     margin-top: 1em;
      border: 1px solid rgb(2, 113, 117);
 }
 .forecast-container > h1 {
@@ -114,6 +124,7 @@ code {
      .TaL {
           border-bottom: 1px solid rgb(2, 113, 117);
           padding-bottom: 0.5em;
+         
      }
      .navbar-brand > h1 {
           font-size: 45px;
@@ -139,7 +150,8 @@ code {
           flex-direction: column;
           margin-top: 2em;
           width: 100vh !important;
-          height: 90vh;
+          /* height: 90vh; */
+          top: 11em;
      }
      .forecast {
           width: 10em;

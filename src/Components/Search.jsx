@@ -60,7 +60,7 @@ export const Search = ({pull}) => {
 
      return (
           <>
-               <nav className="navbar navbar-dark bg-dark" style={{ opacity: "0.9" }} > 
+               <nav className="navbar navbar-dark bg-dark"  > 
                
                     <div className="container-fluid">
                          <div className="navbar-brand">

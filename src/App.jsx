@@ -28,11 +28,13 @@ console.log(weather)
 
   return (
     <div className="App " style={{}}>
-        
- <Search 
- pull={pull_data}/>  
+        <div className="search">
+                <Search 
+                 pull={pull_data}/> 
+        </div>      
 
- <div className="container" style={{ }}>
+
+ <div className="container">
 
 
        <div className="forecast-container" style={{background:`${changeBackground()}`}} >
