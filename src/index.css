@@ -23,7 +23,7 @@ body {
 }
 .container {
      width: 90% !important;
-     margin-top: 2em;
+     margin-top: 6em;
      position: relative;
     top: 18em;
     height: 100%;
@@ -46,6 +46,7 @@ p {
      display: flex;
      flex-direction: column;
      justify-content: space-around;
+     height: 5em;
 }
 .info > h3 {
      font-weight: 900;
@@ -105,13 +106,16 @@ code {
      justify-content: center;
      
 }
+.forecast-container{
+     height: 38.5em;
+}
 .TaL {
      border-bottom: 1px solid rgb(2, 113, 117);
      padding-bottom: 0.5em;
      font-size: 12px;
 }
 
-@media screen and (min-width: 925px) {
+@media screen and (min-width: 1100px) {
      .TaL{font-size: 19px ;}
      .container-fluid {
           padding-right: calc(var(--bs-gutter-x) * 5) !important;
@@ -138,6 +142,7 @@ code {
      }
      .info {
           margin-top: 0em;
+          padding-left: 5em;
      }
      .p-info {
           font-size: 35px;
@@ -148,12 +153,14 @@ code {
      .container {
           display: flex;
           flex-direction: column;
-          margin-top: 2em;
+          margin-top: 5em;
           width: 100vh !important;
-          /* height: 90vh; */
           top: 11em;
      }
      .forecast {
           width: 10em;
+     }
+     .forecast-container{
+          height: 16em;
      }
 }

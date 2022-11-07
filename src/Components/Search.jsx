@@ -12,7 +12,7 @@ export const Search = ({pull}) => {
 
                                            
      const [search, setSearch] = useState("");                                                // from comes the  input 
-     const [city, setCity] = useState({q:'london'});                                         // here is stored  info  from Search Input 
+     const [city, setCity] = useState({q:'Roma,IT'});                                         // here is stored  info  from Search Input 
      const [weather, setWeather] = useState(null);                                           //  where is stored the data from api
      const [units,/*setUnitus*/] = useState("metric");                                         
      const [lat, setLat] = useState("");
@@ -92,7 +92,9 @@ export const Search = ({pull}) => {
                   feelsLike={weather.feels_like}
                   wind={weather.speed}
                   pressure={weather.pressure}
-                  icon={iconInfo}                  
+                  icon={iconInfo}
+                  min={weather.temp_min}
+               max={weather.temp_max}                  
                />}
             
                </nav>
