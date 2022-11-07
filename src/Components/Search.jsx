@@ -39,7 +39,8 @@ export const Search = ({pull}) => {
 
      const handleSubmit = (e) => {
           e.preventDefault();
-          setCity({q: search})   
+          setCity({q: search}) 
+          setSearch('')  
           
       };
       
@@ -102,8 +103,9 @@ export const Search = ({pull}) => {
                 {weather &&
                <TimeAndLoacation 
                weather={formatToLocalTime(weather.dt,weather.timezone)} 
-               min={weather.temp_min}
-               max={weather.temp_max}
+               sunrise={formatToLocalTime(weather.sunrise,weather.timezone,'hh:mm a')}
+               sunset={formatToLocalTime(weather.sunset,weather.timezone,'hh:mm a')}
+              
                />} 
 
 
