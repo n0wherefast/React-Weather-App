@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/React-Weather-App/static/css/main.3210d7de.css",
+    "main.css": "/React-Weather-App/static/css/main.1078542c.css",
     "main.js": "/React-Weather-App/static/js/main.d03cc5d1.js",
     "index.html": "/React-Weather-App/index.html",
-    "main.3210d7de.css.map": "/React-Weather-App/static/css/main.3210d7de.css.map",
+    "main.1078542c.css.map": "/React-Weather-App/static/css/main.1078542c.css.map",
     "main.d03cc5d1.js.map": "/React-Weather-App/static/js/main.d03cc5d1.js.map"
   },
   "entrypoints": [
-    "static/css/main.3210d7de.css",
+    "static/css/main.1078542c.css",
     "static/js/main.d03cc5d1.js"
   ]
 }
