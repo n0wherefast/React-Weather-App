@@ -28,7 +28,6 @@ export const Search = ({pull}) => {
      const handleGeoClick =(e)=>{
           e.preventDefault();
           setCity({lat,lon})
-         
      }
        
 
@@ -61,28 +60,38 @@ export const Search = ({pull}) => {
 
      return (
           <>
-               <nav className="navbar navbar-dark bg-dark"  > 
+               <nav className=" bg-gradient-to-r from-indigo-800 to-blue-800 flex flex-col items-center justify-center "  > 
                
-                    <div className="container-fluid">
-                         <div className="navbar-brand">
-                              <h1 ><img src={icon} alt="icon"/> Weather App  </h1>
-                         </div>
+                    <div className="p-2">
+                         <div className="text-3xl font-extrabold text-slate-300 p-1 pl-5 ">
+                              <h1 className=""> Weather App  </h1>
+                    </div>
                 
 
-                         <form className="input-group" role="search">
+                         <form className="flex gap-2 m-1" role="search">
                               <InputField
+                                  className = {'rounded-2xl p-2 pl-2'}
                                   value={search}
-                                 
                                   onChange={onChange}/>
+
                               <Button
-                                click={handleSubmit}/>
-                                <GeoButton click={handleGeoClick}/>
+                               className = {'rounded-2xl bg-slate-700 p-2 text-slate-200'}
+                                click={handleSubmit}
+                              />
+                                <GeoButton 
+                                   click={handleGeoClick}
+                                   className = {'bg-slate-700 rounded-2xl p-2'}
+                                />
                          </form>
                             
-                    </div>
-                    <Geolocation 
-                    pullGeoData={pullGeoData}
-                    />
+                         </div>
+                         <Geolocation 
+                         pullGeoData={pullGeoData}
+                         />
+
+               <div className='bg-gradient-to-r from-blue-800 to-cyan-600 rounded-2xl p-2 flex flex-col gap-2 justify-center items-center text-2x text-slate-300 shadow-2xl'>
+                         {formatToLocalTime(weather.dt,weather.timezone)} 
+                </div>
                   {weather &&  
                   <Card
                   name={weather.name}
@@ -95,18 +104,21 @@ export const Search = ({pull}) => {
                   pressure={weather.pressure}
                   icon={iconInfo}
                   min={weather.temp_min}
-               max={weather.temp_max}                  
-               />}
-            
-               </nav>
+                  max={weather.temp_max}                  
+               />} 
                
                 {weather &&
-               <TimeAndLoacation 
+               <TimeAndLoacation
+               className={' text-slate-300 flex items-center justify-center  flex-wrap mb-2 gap-2'} 
                weather={formatToLocalTime(weather.dt,weather.timezone)} 
                sunrise={formatToLocalTime(weather.sunrise,weather.timezone,'hh:mm a')}
                sunset={formatToLocalTime(weather.sunset,weather.timezone,'hh:mm a')}
               
                />} 
+            
+      </nav>
+               
+               
 
 
                 

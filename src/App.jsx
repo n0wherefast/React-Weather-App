@@ -24,17 +24,17 @@ function App() {
  } 
 
 
-console.log(weather)
+
 
   return (
-    <div className="App " style={{}}>
-        <div className="search">
+    <div className="bg-slate-400">
+        <div id="SEARCH" className="">
                 <Search 
                  pull={pull_data}/> 
         </div>      
 
 
- <div className="container">
+ <div className="flex">
 
 
        <div className="forecast-container" style={{background:`${changeBackground()}`}} >
