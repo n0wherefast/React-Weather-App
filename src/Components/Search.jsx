@@ -19,7 +19,9 @@ export const Search = ({pull}) => {
      const [lon, setLon] = useState("");
      const id = weather?.icon;
      const iconInfo =`http://openweathermap.org/img/wn/${id}@2x.png`;
-     
+     const check = weather?.temp 
+    
+          
      const pullGeoData = (lat,lon) =>{
           setLat(lat)
           setLon(lon)                                                                     //pull longitude,latitude data from weatherService module
@@ -56,31 +58,39 @@ export const Search = ({pull}) => {
             
      }, [city, units]);
 
+     const changeBackground =()=>{
+            return check > 30 ? " bg-auto animate-ping-short bg-[url('https://images.pexels.com/photos/841343/pexels-photo-841343.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')]  "  : 
+            "bg-auto animate-ping-short bg-[url('https://images.pexels.com/photos/2090646/pexels-photo-2090646.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')]" 
+      } 
+     const changeBackgroundCard =()=>{
+            return check > 30 ? " backdrop-blur-xl"  : "backdrop-blur-xl" 
+      } 
+
    
 
      return (
           <>
-               <nav className=" bg-gradient-to-r from-indigo-800 to-blue-800 flex flex-col items-center justify-center "  > 
+          <nav className = {`${changeBackground()}  flex flex-col items-center justify-center`} > 
                
                     <div className="p-2">
-                         <div className="text-3xl font-extrabold text-slate-300 p-1 pl-5 ">
+                         <div className="text-6xl font-light text-slate-300 p-2 pl-5 ">
                               <h1 className=""> Weather App  </h1>
                     </div>
                 
 
-                         <form className="flex gap-2 m-1" role="search">
+                         <form className="flex gap-2 m-2" role="search">
                               <InputField
                                   className = {'rounded-2xl p-2 pl-2'}
                                   value={search}
                                   onChange={onChange}/>
 
                               <Button
-                               className = {'rounded-2xl bg-slate-700 p-2 text-slate-200'}
+                               className = {'rounded-2xl bg-slate-800 p-2 text-slate-200'}
                                 click={handleSubmit}
                               />
                                 <GeoButton 
                                    click={handleGeoClick}
-                                   className = {'bg-slate-700 rounded-2xl p-2'}
+                                   className = {'bg-slate-800 rounded-2xl p-2'}
                                 />
                          </form>
                             
@@ -88,12 +98,17 @@ export const Search = ({pull}) => {
                          <Geolocation 
                          pullGeoData={pullGeoData}
                          />
-
-               <div className='bg-gradient-to-r from-blue-800 to-cyan-600 rounded-2xl p-2 flex flex-col gap-2 justify-center items-center text-2x text-slate-300 shadow-2xl'>
-                         {formatToLocalTime(weather.dt,weather.timezone)} 
-                </div>
+                      {weather &&
+               <TimeAndLoacation
+               className={' text-slate-300  flex items-center justify-center flex-wrap mb-1 gap-2'} 
+               weather={formatToLocalTime(weather.dt,weather.timezone)} 
+               sunrise={formatToLocalTime(weather.sunrise,weather.timezone,'hh:mm a')}
+               sunset={formatToLocalTime(weather.sunset,weather.timezone,'hh:mm a')}
+               />} 
+                         
                   {weather &&  
                   <Card
+                  bg = {changeBackgroundCard()}
                   name={weather.name}
                   country={weather.country}
                   temp={weather.temp}
@@ -105,17 +120,7 @@ export const Search = ({pull}) => {
                   icon={iconInfo}
                   min={weather.temp_min}
                   max={weather.temp_max}                  
-               />} 
-               
-                {weather &&
-               <TimeAndLoacation
-               className={' text-slate-300 flex items-center justify-center  flex-wrap mb-2 gap-2'} 
-               weather={formatToLocalTime(weather.dt,weather.timezone)} 
-               sunrise={formatToLocalTime(weather.sunrise,weather.timezone,'hh:mm a')}
-               sunset={formatToLocalTime(weather.sunset,weather.timezone,'hh:mm a')}
-              
-               />} 
-            
+               />}             
       </nav>
                
                
