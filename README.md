@@ -1,3 +1,7 @@
+# A simple weather app example  
+
+Built with React.js and TailwindCss
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
