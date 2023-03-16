@@ -4,7 +4,7 @@ function TimeAndLoacation(props) {
   const {weather,sunrise,sunset,className} = props
   return (
   <div className={className}>
-    <div className=' backdrop-blur-xl rounded-2xl p-2 flex flex-col gap-2 justify-center items-center text-2x text-slate-300 shadow-2xl'>
+    <div className=' backdrop-blur-xl rounded-2xl p-2 flex flex-col gap-2 justify-center items-center text-2x text-slate-100 shadow-2xl'>
                          {weather} 
                               </div>
     <div className=' backdrop-blur-xl rounded-2xl  flex  gap-2 justify-center items-center shadow-2xl p-1'>
