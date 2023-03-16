@@ -59,6 +59,9 @@ export const Search = ({pull}) => {
      }, [city, units]);
 
      const changeBackground =()=>{
+
+          if(check < 5) return " bg-auto animate-ping-short bg-[url('https://images.pexels.com/photos/1366919/pexels-photo-1366919.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')]  "
+
             return check > 30 ? " bg-auto animate-ping-short bg-[url('https://images.pexels.com/photos/841343/pexels-photo-841343.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')]  "  : 
             "bg-auto animate-ping-short bg-[url('https://images.pexels.com/photos/2090646/pexels-photo-2090646.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')]" 
       } 
@@ -70,17 +73,17 @@ export const Search = ({pull}) => {
 
      return (
           <>
-          <nav className = {`${changeBackground()}  flex flex-col items-center justify-center`} > 
+          <nav className = {`${changeBackground()} flex flex-col items-center justify-center md:justify-start md:bg-cover md:bg-none md:gap-15 `} > 
                
-                    <div className="p-2">
-                         <div className="text-6xl font-light text-slate-300 p-2 pl-5 ">
+                    <div className="p-2 ">
+                         <div className="text-6xl font-light text-slate-300 p-2 pl-5 md:text-8xl md:text-slate-100">
                               <h1 className=""> Weather App  </h1>
-                    </div>
+                         </div>
                 
 
-                         <form className="flex gap-2 m-2" role="search">
+                         <form className="flex gap-2 m-2 md:p-9 md:gap-5 " role="search">
                               <InputField
-                                  className = {'rounded-2xl p-2 pl-2'}
+                                  className = {'rounded-2xl p-2 pl-2  md:w-60'}
                                   value={search}
                                   onChange={onChange}/>
 
