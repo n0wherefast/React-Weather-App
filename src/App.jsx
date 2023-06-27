@@ -39,12 +39,14 @@ return (
             <div className= {`${changeBackground()} flex flex-col items-center bg-cover md:bg-none md:gap-20 `}>
 
               <div className= {` flex flex-col items-center `}>
-                <p className=" text-slate-900 text-4xl p-3 backdrop-blur-xl shadow-2xl rounded-2xl md:text-slate-100">Hourly | {weather.name},{weather.country}</p>  
+                <p className=" text-slate-900 text-4xl p-3 backdrop-blur-xl shadow-2xl border border-slate-800 m-3 md:text-slate-100">Hourly | {weather.name},{weather.country}</p>  
                 <div className=" flex flex-wrap  items-center justify-center ">
                       {hourly &&
                                 hourly.map((item,index)=>(
                                 <Forecast
-                                className = {`${changeBackground()} text-lg  md:bg-none md:backdrop-blur-2xl shadow-xl rounded-2xl m-2  flex flex-col items-center justify-center md:p-4 md:m-4 md:text-slate-100 md:text-2xl`}
+                                classNameTemp = {'text-4xl font-bold p-2'}
+                                classNameDay = {'text-xl p-2'}
+                                className = {`w-80 h-28 text-lg  md:bg-none md:backdrop-blur-2xl shadow-2xl shadow-slate-900  m-2  flex items-center justify-center md:p-4 md:m-4 md:text-slate-100 md:text-2xl`}
                                 key={index}
                                 title={item.title}
                                 temp={item.temp}
@@ -55,12 +57,14 @@ return (
                 </div>
 
               <div className="flex flex-col items-center " >
-                    <p className=" text-slate-900 text-4xl backdrop-blur-xl shadow-2xl rounded-3xl p-3 md:text-slate-100">Daily | {weather.name},{weather.country}</p>
+                    <p className=" text-slate-900 text-4xl backdrop-blur-xl shadow-2xl p-3 m-2 border border-slate-800 md:text-slate-100">Daily | {weather.name},{weather.country}</p>
                     <div className=" flex flex-wrap  items-center justify-center ">
                         {daily &&
                                       daily.map((item,index)=>(
                                       <Forecast
-                                      className = {` ${changeBackground()} text-lg md:bg-none backdrop-blur-2xl shadow-xl rounded-2xl m-2  flex flex-col items-center justify-center md:p-4 md:m-4 md:text-slate-100 md:text-2xl`}
+                                      classNameTemp = {'text-4xl font-bold p-2'}
+                                      classNameDay = {'text-3xl p-2'}
+                                      className = {` backdrop-blur-2xl w-80 h-28 text-xl md:bg-none shadow-xl shadow-slate-900  m-2  flex items-center justify-around md:p-4 md:m-4 md:text-slate-100 md:text-2xl`}
                                       key={index}
                                       title={item.title}
                                       temp={item.temp}
