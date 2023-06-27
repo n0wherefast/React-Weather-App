@@ -73,11 +73,11 @@ export const Search = ({pull}) => {
 
      return (
           <>
-          <nav className = {`${changeBackground()} flex flex-col items-center justify-center md:justify-start md:bg-cover md:bg-none md:gap-15 `} > 
+          <nav className = {`${changeBackground()} flex flex-col items-center justify-center md:justify-start md:bg-cover md:bg-none `} > 
                
                     <div className="p-2 ">
                          <div className="text-6xl font-light text-slate-300 p-2 pl-5 md:text-8xl md:text-slate-100">
-                              <h1 className=""> Weather App  </h1>
+                              <h1 className="md:text-5xl"> Weather App  </h1>
                          </div>
                 
 
