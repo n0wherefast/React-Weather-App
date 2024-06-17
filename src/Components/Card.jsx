@@ -5,7 +5,7 @@ function Card (props){
   const {country,temp,weather,bg,name,icon,humidity,feelsLike,wind,max,min} = props
   
   return (
-    <div className="text-slate-100 md:p-9 text-xs max-w-[98%]  md:w-[35vw] " id='INFO'>
+    <div className="text-slate-100  text-xs max-w-[98%]  md:w-[35vw] " id='INFO'>
      
     <div className={` ${bg} flex-col items-center rounded-2xl p-3 m-2 shadow-2xl md:p-6 `}>
         <p className=' text-5xl md:text-6xl mb-14 pt-2 font-extrabold flex justify-center'id='NAME' > {name} ,{country}</p> 
