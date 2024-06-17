@@ -28,43 +28,25 @@ function App() {
 
 return (
     
-      <div className={`${changeBackground()} md:bg-cover md:bg-center md:flex md:flex-row md:justify-around md:h-[100vh] md:items-center`}>
+      <div className={` md:bg-sky-300 w-full h-screen p-2  md:flex md:flex-row md:justify-around  md:items-center`}>
 
-              <div id="SEARCH" className=''>
+              <div id="SEARCH" className='md:w-full'>
                       <Search 
                       pull={pull_data}/>  
               </div>      
 
 
-            <div className= {`${changeBackground()} flex flex-col md:flex-row  items-center bg-cover md:bg-none  `}>
+            <div className= {`flex flex-col md:flex-row  items-center bg-cover md:bg-none md:w-[90vw]  `}>
 
-              <div className= {` flex flex-col items-center `}>
-                <p className=" text-slate-900 text-4xl p-3 backdrop-blur-xl shadow-2xl border border-slate-800 m-3 md:text-slate-100">Hourly | {weather.name},{weather.country}</p>  
-                <div className=" flex flex-wrap  items-center justify-center ">
-                      {hourly &&
-                                hourly.map((item,index)=>(
-                                <Forecast
-                                classNameTemp = {'md:text-sm text-4xl font-bold p-2'}
-                                classNameDay = {'text-xl p-2'}
-                                className = {` md:w-52 md:h-16 w-80 h-28 lg:w-80 lg:h-28  text-lg  md:bg-none md:backdrop-blur-2xl shadow-2xl shadow-slate-900  m-2  flex items-center justify-center md:p-4 md:m-4 md:text-slate-100 md:text-sm`}
-                                key={index}
-                                title={item.title}
-                                temp={item.temp}
-                                icon={`http://openweathermap.org/img/wn/${item.icon}@2x.png`}
-                                />
-                                )) } 
-                    </div>                     
-                </div>
-
-              <div className="flex flex-col items-center " >
-                    <p className=" text-slate-900 text-4xl backdrop-blur-xl shadow-2xl p-3 m-2 border border-slate-800 md:text-slate-100">Daily | {weather.name},{weather.country}</p>
+               <div className="flex flex-col items-center p-2 " >
+                    <p className=" text-slate-900 text-6xl md:text-8xl font-black  p-3 m-2  md:text-slate-100">Daily</p>
                     <div className=" flex flex-wrap  items-center justify-center ">
                         {daily &&
                                       daily.map((item,index)=>(
                                       <Forecast
                                       classNameTemp = {'text-4xl md:text-sm  font-bold p-2'}
                                       classNameDay = {'text-3xl p-2'}
-                                      className = {` md:w-52 md:h-16 backdrop-blur-2xl w-80 lg:w-80 lg:h-28 h-28 text-xl md:bg-none shadow-xl shadow-slate-900  m-2  flex items-center justify-around md:p-4 md:m-4 md:text-slate-100 md:text-2xl`}
+                                      className = {`text-white bg-sky-500 rounded-xl md:w-52 md:h-16 backdrop-blur-2xl w-80 lg:w-80 lg:h-28 h-28 text-xl md:bg-none shadow-xl shadow-slate-900  m-2  flex items-center justify-around md:p-4 md:m-4 md:text-slate-100 md:text-2xl`}
                                       key={index}
                                       title={item.title}
                                       temp={item.temp}

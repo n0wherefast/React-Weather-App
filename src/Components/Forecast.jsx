@@ -7,11 +7,13 @@ export default function Forecast(props) {
   return (
     <>
         <div className= {className}>
-          <h4><p className={classNameDay}>{title}</p></h4>
-          <div className='text-3xl'>|</div>
-          <p className={classNameTemp}>{temp.toFixed()} °C</p>
-          <div className='text-3xl'>|</div>
+          {/* <div className='text-sm'></div> */}
+          
+          {/* <div className='text-sm'></div> */}
           <img src={icon} alt="" />
+          <p className={classNameTemp}>{temp.toFixed()} °C</p>
+          <h4><p className={classNameDay}>{title}</p></h4>
+
         </div>
     </>
   )
