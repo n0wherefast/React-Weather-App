@@ -5,11 +5,11 @@ function Card (props){
   const {country,temp,weather,bg,name,icon,humidity,feelsLike,wind,max,min} = props
   
   return (
-    <div className="text-slate-100 md:p-9 text-xs md:w-[35vw] " id='INFO'>
+    <div className="text-slate-100 md:p-9 text-xs max-w-[98%]  md:w-[35vw] " id='INFO'>
      
     <div className={` ${bg} flex-col items-center rounded-2xl p-3 m-2 shadow-2xl md:p-6 `}>
         <p className=' text-5xl md:text-6xl mb-14 pt-2 font-extrabold flex justify-center'id='NAME' > {name} ,{country}</p> 
-        <p className=" text-[10rem] md:text-[12rem] mb-5 font-bold p-1 flex  justify-center items-center" id='TEMP'>{temp?.toFixed()}°C</p>
+        <p className=" text-[38vw] md:text-[12rem] mb-5 font-bold p-1 flex  justify-center items-center" id='TEMP'>{temp?.toFixed()}°C</p>
         <div className='  flex flex-row items-center justify-center '>
             <div className='text-3xl font-extrabold pt-2'>{weather}</div><img className='h-28' src={icon} alt=""/>
         </div>  

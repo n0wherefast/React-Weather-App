@@ -1,7 +1,7 @@
 import React from 'react'
 
 function TimeAndLoacation(props) {
-  const {weather,sunrise,sunset,className} = props
+  const {weather,className} = props
   return (
   <div className={className}>
     <div className=' backdrop-blur-xl rounded-2xl p-2 flex flex-col gap-2 justify-center items-center  text-slate-100 shadow-2xl'>

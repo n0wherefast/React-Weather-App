@@ -7,7 +7,7 @@ function App() {
   const [weather, setWeather] = useState(""); 
   const [daily, setDaily] = useState("");
   const [hourly, setHourly] = useState("");  
-  const check = weather?.temp 
+  // const check = weather?.temp 
  
 
  const pull_data = (data,daily,hourly) => {                   // Pull Weather data fetched inside child component(Search) to parent 
@@ -18,13 +18,13 @@ function App() {
 
  
 
- const changeBackground =()=>{
-  if(check < 5) return " bg-auto animate-ping-short bg-[url('https://images.pexels.com/photos/691668/pexels-photo-691668.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')]  "
+//  const changeBackground =()=>{
+//   if(check < 5) return " bg-auto animate-ping-short bg-[url('https://images.pexels.com/photos/691668/pexels-photo-691668.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')]  "
 
-   return check  > 30 ? " bg-auto animate-pulse-short bg-[url('https://images.pexels.com/photos/998653/pexels-photo-998653.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')]  " 
-    : "bg-auto animate-pulse-short bg-[url('https://images.pexels.com/photos/96622/pexels-photo-96622.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')] "  
+//    return check  > 30 ? " bg-auto animate-pulse-short bg-[url('https://images.pexels.com/photos/998653/pexels-photo-998653.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')]  " 
+//     : "bg-auto animate-pulse-short bg-[url('https://images.pexels.com/photos/96622/pexels-photo-96622.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')] "  
   
- } 
+//  } 
 
 return (
     

@@ -1,4 +1,4 @@
-import icon from "../img/116.png";
+// import icon from "../img/116.png";
 import React, { useState, useEffect } from "react";
 import { InputField,Button,GeoButton } from "./utils";
 import { Geolocation } from "./Geolocation";
@@ -78,7 +78,7 @@ export const Search = ({pull}) => {
 
      return (
           <>
-          <nav className = {`w-full h-full flex flex-col items-center justify-start md:justify-start md:bg-cover `} > 
+          <nav className = {`max-w-full h-full flex flex-col items-center justify-start md:justify-start md:bg-cover `} > 
                 <div className={`${changeBackground()} w-full md:m-1 md:p-0 m-1 py-2 rounded-3xl flex flex-col items-center `}>
                     <div className=" ">
                          <div className="text-6xl font-light text-slate-300 p-2 pl-5 md:text-8xl md:text-slate-100">
@@ -130,15 +130,15 @@ export const Search = ({pull}) => {
                   max={weather.temp_max}                  
                />
                }
-               <div className= {` flex flex-col items-center `}>
+               <div className= {` flex flex-col items-center w-full `}>
                 {/* <p className=" text-slate-900 text-4xl p-3 backdrop-blur-xl shadow-2xl border border-slate-800 m-3 md:text-slate-100">Hourly | {weather.name},{weather.country}</p>   */}
-                <div className="flex flex-wrap  items-center justify-center ">
+                <div className="flex gap-1 items-center justify-center w-full p-2">
                       {hourly &&
                                 hourly.map((item,index)=>(
                                 <Forecast
                                 classNameTemp = {'md:text-md text-xl font-bold '}
                                 classNameDay = {'text-sm'}
-                                className = {` bg-sky-600 w-[4.3rem] m-1 h-[8rem] md:w-[6rem]  flex flex-col items-center justify-center md:p-4 md:m-4 md:text-slate-100 md:text-sm rounded-xl`}
+                                className = {` text-white bg-sky-600 w-[4.3rem] h-[8rem] md:w-[6rem]  flex flex-col items-center justify-center md:p-4 md:m-4 md:text-slate-100 md:text-sm rounded-xl`}
                                 key={index}
                                 title={item.title}
                                 temp={item.temp}
